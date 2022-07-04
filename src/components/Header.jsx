@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css'
 import { Link } from "react-router-dom";
 
-export default({black})=>{
+export default({black,page})=>{
     return (
         <header className={black?'black':''}>
             <div className='header-logo'>
@@ -12,22 +12,22 @@ export default({black})=>{
             </div>
             <ul className='submenus'>
                 <li>
-                    <Link to="/">Inicio</Link>
+                    <Link to="/" style={page==='inicio'?{fontWeight:'bold'}:null}>Inicio</Link>
                 </li>
                 <li>
-                    <Link to="/Series">Séries</Link>
+                    <Link to="/Series" style={page==='series'?{fontWeight:'bold'}:null}>Séries</Link>
                 </li>
                 <li>
-                    <Link to="/">Filmes</Link>
+                    <Link to="/" style={page==='filmes'?{fontWeight:'bold'}:null}>Filmes</Link>
                 </li>
                 <li>
-                    <Link to="/">Bombando</Link>
+                    <Link to="/" style={page==='bombamdo'?{fontWeight:'bold'}:null}>Bombando</Link>
                 </li>
                 <li>
-                    <Link to="/">Minha lista</Link>
+                    <Link to="/" style={page==='mylist'?{fontWeight:'bold'}:null}>Minha lista</Link>
                 </li>
                 <li>
-                    <Link to="/">Idiomas e legendas</Link>
+                    <Link to="/" style={page==='legends'?{fontWeight:'bold'}:null}>Idiomas e legendas</Link>
                 </li>
             </ul>
             <div className='header-user'>

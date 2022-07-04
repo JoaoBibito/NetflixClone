@@ -10,6 +10,7 @@ export default ()=>{
     const [movieList, setMovieList] = useState([])
     const [featuredData, setFeaturedData] = useState(null)
     const [blackHeader,setBlackHeader] = useState(false)
+    let page = 'inicio';
 
     useEffect(()=>{
         const loadAll = async ()=>{
@@ -45,7 +46,7 @@ export default ()=>{
 
 return(
     <div className='page'>
-        <Header black={blackHeader}/>
+        <Header black={blackHeader} page={page}/>
         {featuredData &&
         <FeaturedMovie item={featuredData}/>}
     <section className='lists'>
