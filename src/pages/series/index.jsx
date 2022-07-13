@@ -18,6 +18,11 @@ export default ()=>{
             setSerieList(list);
 
             //getFeatured
+            let randomChoseKind = Math.floor(Math.random()*(list.length-1))//Math.floor((Math.random()*(list.length-1))/10);
+            let randomChoseSerie =Math.floor(Math.random()*(list[randomChoseKind].items?.results.length));
+            let chose = list[randomChoseKind].items?.results[randomChoseSerie];
+            let choseInfo = await Tmdb.getMovieInfo(chose.id, 'tv');
+            setFeaturedData(choseInfo);
         }
         loadAll();
     },[])

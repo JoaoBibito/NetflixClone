@@ -80,8 +80,7 @@ export default{
         return info;
     },   
     getSeries: async()=>{//genre/tv/list?api_key=${api_key}&language=pt-BR
-        let list= await basicFetch(`/discover/tv?api_key=${api_key}&language=pt-BR`)
-        return [
+       return [
             {
                 slug:"Series",
                 title:"Series",
