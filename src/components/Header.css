@@ -45,3 +45,10 @@ ul{
 li{
     margin-right: 20px;
 }
+.pageSelected{
+    font-weight:bold;
+    font-size: 1rem;
+}
+li a:hover{
+    opacity: 0.8;
+}

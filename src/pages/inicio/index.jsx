@@ -10,8 +10,7 @@ export default ()=>{
     const [movieList, setMovieList] = useState([])
     const [featuredData, setFeaturedData] = useState(null)
     const [blackHeader,setBlackHeader] = useState(false)
-    let page = 'inicio';
-
+   
     useEffect(()=>{
         const loadAll = async ()=>{
             //pega lista de filmes
@@ -46,7 +45,7 @@ export default ()=>{
 
 return(
     <div className='page'>
-        <Header black={blackHeader} page={page}/>
+        <Header black={blackHeader} page={"inicio"}/>
         {featuredData &&
         <FeaturedMovie item={featuredData}/>}
     <section className='lists'>

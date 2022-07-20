@@ -12,22 +12,22 @@ export default({black,page})=>{
             </div>
             <ul className='submenus'>
                 <li>
-                    <Link to="/" style={page==='inicio'?{fontWeight:'bold'}:null}>Inicio</Link>
+                    <Link to="/" className={page==='inicio'? "pageSelected":null}>Inicio</Link>
                 </li>
                 <li>
-                    <Link to="/Series" style={page==='series'?{fontWeight:'bold'}:null}>Séries</Link>
+                    <Link to="/Series" className={page==='Series'? "pageSelected":null}>Séries</Link>
                 </li>
                 <li>
-                    <Link to="/" style={page==='filmes'?{fontWeight:'bold'}:null}>Filmes</Link>
+                    <Link to="/Movies" className={page==='Movies'? "pageSelected":null}>Filmes</Link>
                 </li>
                 <li>
-                    <Link to="/" style={page==='bombamdo'?{fontWeight:'bold'}:null}>Bombando</Link>
+                    <Link to="/" className={page==='1'? "pageSelected":null}>Bombando</Link>
                 </li>
                 <li>
-                    <Link to="/" style={page==='mylist'?{fontWeight:'bold'}:null}>Minha lista</Link>
+                    <Link to="/" className={page==='2'? "pageSelected":null}>Minha lista</Link>
                 </li>
                 <li>
-                    <Link to="/" style={page==='legends'?{fontWeight:'bold'}:null}>Idiomas e legendas</Link>
+                    <Link to="/" className={page==='M33ovies'? "pageSelected":null}>Idiomas e legendas</Link>
                 </li>
             </ul>
             <div className='header-user'>

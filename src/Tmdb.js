@@ -12,10 +12,28 @@ const api_base="https://api.themoviedb.org/3";
 - Documentarios
 */
 
-const basicFetch = async(endpoint)=>{
-    const req= await fetch(`${api_base}${endpoint}`)
+let getFetch = async(endpoint)=>{
+     const req= await fetch(`${api_base}${endpoint}`)
     const json = await req.json();
-    return json;    
+    return json;   
+   
+}
+const basicFetch = async(endpoint)=>{
+    let list = [];
+    let json={};
+    for(let i = 1; i<5;i++){
+        const req= await fetch(`${api_base}${endpoint}&page=${i}`)
+        json = await req.json();
+        json.results.map((item,key)=>{
+            list.push(item);
+        })
+    }
+    return {
+        page:1,
+        results:list,
+        total_pages:json.total_pages,
+        total_results:json.total_results
+    }
 }
 export default{
     getHomeList:async ()=>{
@@ -67,10 +85,10 @@ export default{
         if(movieId){
             switch(type){
                 case 'movie':
-                    info=await basicFetch(`/movie/${movieId}?language=pt-BR&api_key=${api_key}`)
+                    info=await getFetch(`/movie/${movieId}?language=pt-BR&api_key=${api_key}`)
                 break;
                 case 'tv':
-                    info=await basicFetch(`/tv/${movieId}?language=pt-BR&api_key=${api_key}`)
+                    info=await getFetch(`/tv/${movieId}?language=pt-BR&api_key=${api_key}`)
                 break; 
                 default:
                     info=null;
@@ -84,7 +102,12 @@ export default{
             {
                 slug:"Series",
                 title:"Series",
-                items:await basicFetch(`/discover/tv?api_key=${api_key}&language=pt-BR`)
+                items:await getFetch(`/discover/tv?api_key=${api_key}&language=pt-BR`)
+            },
+            {
+                slug:"Popular",
+                title:"Popular",
+                items:await basicFetch(`/tv/popular?language=pt-BR&api_key=${api_key}`)
             },
             {
                 slug:"Comedy",
@@ -105,6 +128,45 @@ export default{
                 slug:"Drama",
                 title:"Drama",
                 items:await basicFetch(`/discover/tv?with_genres=18&language=pt-BR&api_key=${api_key}`)
+            }
+        ];
+    },
+    getMovies:async()=>{
+        return[
+            {
+                slug:"Movies",
+                title:"Filmes",
+                items:await getFetch(`/discover/movie?api_key=${api_key}&language=pt-BR`)
+            },
+            {
+                slug:"Popular",
+                title:"Popular",
+                items:await basicFetch(`/movie/popular?language=pt-BR&api_key=${api_key}`)
+            },
+            {
+                slug: 'Comedy',
+                title: 'Comedia',
+                items: await basicFetch(`/discover/movie?with_genres=35&language=pt-BR&api_key=${api_key}`)
+            },
+            {
+                slug: 'Action ',
+                title: 'Ação',
+                items: await basicFetch(`/discover/movie?with_genres=28&language=pt-BR&api_key=${api_key}`)
+            },
+            {
+                slug: 'Horror',
+                title: 'Terror',
+                items: await basicFetch(`/discover/movie?with_genres=27&language=pt-BR&api_key=${api_key}`)
+            },
+            {
+                slug: 'Romance',
+                title: 'Romance',
+                items: await basicFetch(`/discover/movie?with_genres=10749&language=pt-BR&api_key=${api_key}`)
+            },
+            {
+                slug: 'Documentary',
+                title: 'Documentarios',
+                items: await basicFetch(`/discover/movie?with_genres=99&language=pt-BR&api_key=${api_key}`)
             }
         ];
     }

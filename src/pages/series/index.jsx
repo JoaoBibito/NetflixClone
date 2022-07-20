@@ -6,7 +6,6 @@ import Tmdb from '../../Tmdb';
 import MovieRow from '../../components/MovieRow';
 export default ()=>{
 
-    let page ='series';
     const [featuredData,setFeaturedData]=useState(null);   
     const [blackHeader,setBlackHeader] = useState(false);
     const [serieList,setSerieList] = useState([]);
@@ -27,9 +26,25 @@ export default ()=>{
         loadAll();
     },[])
 
+    useEffect(()=>{
+        const scrollListener=()=>{
+            if(window.scrollY>10){
+                setBlackHeader(true)
+            }
+            else{
+                setBlackHeader(false)
+            }
+        }
+
+        window.addEventListener('scroll', scrollListener);
+        return()=>{
+            window.removeEventListener('scroll', scrollListener)
+        }
+    })
+
     return (
         <div className='page'>
-            <Header black={blackHeader} page={page}/> 
+            <Header black={blackHeader} page={"Series"}/> 
             {featuredData && <FeaturedMovie item={featuredData}/>}
             <section className='seriesList'>
                 {serieList.map((item,key)=>(
