@@ -169,5 +169,44 @@ export default{
                 items: await basicFetch(`/discover/movie?with_genres=99&language=pt-BR&api_key=${api_key}`)
             }
         ];
+    },
+    getPopular:async()=>{
+        return [
+            {
+                slug:"Popular Movies",
+                title:"Filmes populares",
+                items:await basicFetch(`/movie/popular?language=pt-BR&api_key=${api_key}`)
+            },
+            {
+                slug:"Popular Series",
+                title:"Séries populares",
+                items:await basicFetch(`/tv/popular?language=pt-BR&api_key=${api_key}`)
+            },
+            {
+                slug:"Tranding movies",
+                title:"Filmes recomendados",
+                items: await basicFetch(`/trending/movie/week?language=pt-BR&api_key=${api_key}`)
+            },
+            {
+                slug:"Tranding series",
+                title:"Séries recomendadas",
+                items:await basicFetch(`/trending/tv/week?language=pt-BR&api_key=${api_key}`)
+            },
+            {
+                slug:"Tranding series",
+                title:"Séries recomendadas",
+                items:await basicFetch(`/trending/tv/week?language=pt-BR&api_key=${api_key}`)
+            },
+            {                
+                slug: 'Toprated movies',
+                title: 'Filmes em alta',
+                items: await basicFetch(`/movie/top_rated?language=pt-BR&api_key=${api_key}`)
+            },
+            {                
+                slug: 'Toprated series',
+                title: 'Séries em alta',
+                items: await basicFetch(`/tv/top_rated?language=pt-BR&api_key=${api_key}`)
+            }
+        ]
     }
 }

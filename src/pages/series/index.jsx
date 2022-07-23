@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import FeaturedMovie from '../../components/FeaturedMovie';
 import Tmdb from '../../Tmdb';
 import MovieRow from '../../components/MovieRow';
+
 export default ()=>{
 
     const [featuredData,setFeaturedData]=useState(null);   
@@ -40,7 +41,7 @@ export default ()=>{
         return()=>{
             window.removeEventListener('scroll', scrollListener)
         }
-    })
+    },[])
 
     return (
         <div className='page'>
@@ -51,10 +52,15 @@ export default ()=>{
                     <MovieRow key={key} title={item.title} items={item.items}/>
                 ))}
             </section>
+            <footer>
+                Feito com <span role="img" aria-label="corção">❤️</span><br/>
+                Deireitos de imagem para Netflix<br/>
+                Dados retirados do site 'themoviedb.org'
+            </footer>
             {serieList.length <=0 &&
             <div className='loading'>
                 <img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt="Carregando"/>
             </div>}
        </div>       
     )
-}
+};

@@ -21,7 +21,7 @@ export default({black,page})=>{
                     <Link to="/Movies" className={page==='Movies'? "pageSelected":null}>Filmes</Link>
                 </li>
                 <li>
-                    <Link to="/" className={page==='1'? "pageSelected":null}>Bombando</Link>
+                    <Link to="/Latest" className={page==='Latest'? "pageSelected":null}>Bombando</Link>
                 </li>
                 <li>
                     <Link to="/" className={page==='2'? "pageSelected":null}>Minha lista</Link>
