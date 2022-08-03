@@ -53,11 +53,11 @@ export default ()=>{
                         <MovieRow key={key} title={item.title} items={item.items}/>
                     ))}
                 </section>
-                <foorter>
+                <footer>
                     Feito com <span role="img" aria-label="coração">❤️</span><br/>
-                    Direitos reservados para Netflix<br/>
-                    Dados retirados do site 'themoviedb.org'
-                </foorter>
+                    Direitos de imagem para Netflix<br/>
+                    Dados retirados do site 'themoviedb.org'<br/>
+                </footer>
                 {movieList.length <=0 &&
                 <div className='loading'>
                      <img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt="Carregando"/>

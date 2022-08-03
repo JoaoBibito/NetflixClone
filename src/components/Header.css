@@ -23,7 +23,12 @@ header.black{
 }
 .header-user{
     height: 35px;
+    width: 250px;
+    display: flex   ;
     margin-left: auto;
+    justify-items: center;
+    align-content: center;
+    justify-content: space-around;
 }
 .header-user img{
     height: 100%;
@@ -51,4 +56,9 @@ li{
 }
 li a:hover{
     opacity: 0.8;
+}
+.btnKids{
+    background-color: transparent;
+    vertical-align: middle;
+    border: none;
 }

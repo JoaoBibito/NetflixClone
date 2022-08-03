@@ -1,13 +1,15 @@
 import React from 'react';
 import './Header.css'
 import { Link } from "react-router-dom";
+import lupa from '../imagens/lupa.png';
+import sino from '../imagens/sino.png';
 
 export default({black,page})=>{
     return (
         <header className={black?'black':''}>
             <div className='header-logo'>
                 <a href='/'>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" width="80" height="40" alt="Netflix"/>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" width="90" height="50" alt="Netflix"/>
                 </a>
             </div>
             <ul className='submenus'>
@@ -31,6 +33,15 @@ export default({black,page})=>{
                 </li>
             </ul>
             <div className='header-user'>
+                <a href='/'>
+                    <img src={lupa} alt="lupa" width="30" height="20"/>
+                </a>
+                <button className='btnKids'>
+                    Infantil
+                </button>
+                <a href='/'>
+                    <img src={sino} width="40" height="20" alt="sino"/>
+                </a>
                 <a href='/'>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Usuário"/>
                 </a>
