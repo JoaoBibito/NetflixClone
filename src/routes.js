@@ -7,7 +7,7 @@ import Latest from './pages/latest';
 
 function AppRoutes(){
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Routes>
         <Route path='/' exact element={<Index/>}/>
         <Route path='/Series' exact element={<Series/>}/>
