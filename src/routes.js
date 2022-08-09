@@ -7,14 +7,14 @@ import Latest from './pages/latest';
 
 function AppRoutes(){
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
     <Routes>
         <Route path='/' exact element={<Index/>}/>
         <Route path='/Series' exact element={<Series/>}/>
         <Route path='/Movies' exact element={<Movies/>}/>
         <Route path='/Latest' exact element={<Latest/>}/>
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );   
 };
 
