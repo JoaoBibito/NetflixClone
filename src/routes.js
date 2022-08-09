@@ -7,7 +7,7 @@ import Latest from './pages/latest';
 
 function AppRoutes(){
   return (
-    <HashRouter >
+    <HashRouter baseline="">
     <Routes>
         <Route path='/' exact element={<Index/>}/>
         <Route path='/Series' exact element={<Series/>}/>
