@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter  , Route, Routes } from 'react-router-dom';
+import { BrowserRouter,HashRouter  , Route, Routes } from 'react-router-dom';
 import Index from './pages/inicio';
 import Series from './pages/series';
 import Movies from './pages/movies';
@@ -7,7 +7,7 @@ import Latest from './pages/latest';
 
 function AppRoutes(){
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter >
     <Routes>
         <Route path='/' exact element={<Index/>}/>
         <Route path='/Series' exact element={<Series/>}/>
