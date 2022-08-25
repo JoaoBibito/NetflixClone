@@ -29,15 +29,16 @@ export default ()=>{
     useEffect(()=>{
         const scrollListener=()=>{
             if(window.scrollY>10){
-                setBlackHeader(true);
+                setBlackHeader(true)
             }
             else{
                 setBlackHeader(false)
             }
-            window.addEventListener("scroll",scrollListener);
-            return()=>{
-                window.removeEventListener("scroll",scrollListener)
-            }
+        }
+
+        window.addEventListener('scroll', scrollListener);
+        return()=>{
+            window.removeEventListener('scroll', scrollListener)
         }
     },[])
 

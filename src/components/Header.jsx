@@ -8,9 +8,9 @@ export default({black,page})=>{
     return (
         <header className={black?'black':''}>
             <div className='header-logo'>
-                <a href='/'>
+                <Link to='/'>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" width="90" height="50" alt="Netflix"/>
-                </a>
+                </Link>
             </div>
             <ul className='submenus'>
                 <li>
@@ -29,22 +29,22 @@ export default({black,page})=>{
                     <Link to="/" className={page==='2'? "pageSelected":null}>Minha lista</Link>
                 </li>
                 <li>
-                    <Link to="/" className={page==='M33ovies'? "pageSelected":null}>Idiomas e legendas</Link>
+                    <Link to="/" className={page==='3'? "pageSelected":null}>Idiomas e legendas</Link>
                 </li>
             </ul>
             <div className='header-user'>
-                <a href='/'>
+                <button>
                     <img src={lupa} alt="lupa" width="30" height="20"/>
-                </a>
+                </button>
                 <button className='btnKids'>
                     Infantil
                 </button>
-                <a href='/'>
+                <button>
                     <img src={sino} width="40" height="20" alt="sino"/>
-                </a>
-                <a href='/'>
+                </button>
+                <button>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Usuário"/>
-                </a>
+                </button>
             </div>
         </header>
     )

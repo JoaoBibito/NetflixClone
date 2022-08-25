@@ -34,6 +34,13 @@ header.black{
     height: 100%;
     border-radius: 3px;
 }
+.header-user > button{
+    background-color: transparent;
+    border: 0px;
+}
+.header-user > button:hover{
+    cursor: pointer;
+}
 .submenus{
     box-sizing: border-box;
     display: flex;

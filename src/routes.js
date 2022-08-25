@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter,HashRouter  , Route, Routes } from 'react-router-dom';
+import { HashRouter  , Route, Routes } from 'react-router-dom';
 import Index from './pages/inicio';
 import Series from './pages/series';
 import Movies from './pages/movies';
